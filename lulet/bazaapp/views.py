@@ -52,9 +52,8 @@ class ProductDelete(DeleteView):
     model = Product
     template_name = 'product_delete.html'
     #success_url = reverse_lazy('back to calling url') #reverse_lazy('product')
-    #сделать так чтобы возвращалось на {{request.META.HTTP_REFERER}}
     def get_success_url(self):
-        print(self.request.META.get('HTTP_REFERER'))
+        print('HTTP_REFERER-' self.request.META.get('HTTP_REFERER'))
         return self.request.META.get('HTTP_REFERER')
 
 
