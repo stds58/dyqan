@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from .models import Product
 from .forms import ImageForm, ProductForm
 from django.http import HttpResponseRedirect
-
+from django.shortcuts import redirect
 
 class ProductsList(ListView):
     model = Product
@@ -25,8 +25,6 @@ class ProductCreate(CreateView):
     form_class = ProductForm
     model = Product
     template_name = 'product_edit.html'
-
-
 
 
 def image_upload_view(request):
@@ -52,8 +50,11 @@ class ProductDelete(DeleteView):
     model = Product
     template_name = 'product_delete.html'
     #success_url = reverse_lazy('back to calling url') #reverse_lazy('product')
+
+
     def get_success_url(self):
         print(f"HTTP_REFERER-{self.request.META.get('HTTP_REFERER')}")
         return self.request.META.get('HTTP_REFERER')
+
 
 
