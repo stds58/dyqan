@@ -23,11 +23,11 @@
                 <button {% block 3 %}{% endblock 3 %}>поиск</button>
                 </div>
                 <button {% block 4 %}{% endblock 4 %}></button>
-                <button {% block 5 %}{% endblock 5 %}>каталог</button>
+                <form action="{% url 'product' %}"><button {% block 5 %}{% endblock 5 %}>каталог</button></form>
                 {% block 6 %}<button ></button>{% endblock 6 %}
-                <button {% block 7 %}{% endblock 7 %}>о нас</button>
+                <form action="/main/about/"><button {% block 7 %}{% endblock 7 %}>о нас</button></form>
                 <button {% block 8 %}{% endblock 8 %}></button>
-                <button {% block 9 %}{% endblock 9 %}>войти</button>
+                {% block 9 %}<form action="{% url 'login' %}"><button >войти</button></form>{% endblock 9 %}
 
             </div>
         </div>

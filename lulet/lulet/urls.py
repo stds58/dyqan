@@ -21,9 +21,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages/', include('django.contrib.flatpages.urls')),
+    path('main/', include('django.contrib.flatpages.urls')),
     path('', include('bazaapp.urls')),
     #path('', include('media.urls')),
+    path('sign/', include('sign.urls'))
+    #path('accounts/', include('allauth.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
