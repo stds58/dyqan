@@ -1,0 +1,48 @@
+
+
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Товар
+{% endblock title %}
+
+{% block 6 %}<button class="buttonactive">манагер</button> {% endblock 6 %}
+
+{% block container-up %}
+{% endblock container-up %}
+{% block container-edit %}
+{% endblock container-edit %}
+{% block content %}
+<h1>Удаление товара</h1>
+
+<div class="item_product2">
+               <div class="item_product">
+               <div class="image" style="background-image: url(/media/{{ product.image }})"></div>
+               <div class="item-info">
+               <p>{{ product.title }}</p>
+               <p>{{ product.tekst }}</p>
+               <p>{{ product.price }}</p>
+               </div>
+
+               </div>
+               <p><a href="{% url 'product' %}">ко всем товарам</a></p>
+           </div>
+
+<div class="products">
+<div class="container">
+    <div class="products-content">
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Удаляем "{{ product.title }}"?</p>
+    <input type="submit" value="Удалить" action="{{request.META.HTTP_REFERER}}" />
+</form>
+
+
+{% block container-down %}
+{% endblock container-down %}
+    </div>
+</div>
+</div>
+
+{% endblock content %}

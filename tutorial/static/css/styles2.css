@@ -1,0 +1,171 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #A4B6C0;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+nav {
+  background-color: #11687B;
+  padding: 10px 0px;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.input-wrapper button {
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.input-wrapper input {
+  height: 24px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 300px;
+}
+
+/*nav button*/
+nav button {
+  border-radius: 10px;
+  width: 120px;
+  height: 30px;
+  background-color: #D9D9D9;
+  margin: 0px 10px 0px 0px;
+}
+
+.buttonactive {
+  background-color: #FF9255;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: center; /*space-around;*/
+}
+
+.input-wrapper {
+
+}
+
+.products {
+  padding: 50px 0;
+}
+
+.products .item {
+  width: 25%;
+  margin-bottom: 30px;
+}
+
+.products-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.products .image {
+  width:200px;
+  height:200px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 3px solid #ffffff;
+}
+
+
+
+
+.container-up {
+  width: 80%;
+  margin: 10px auto;
+}
+.nav-content-up {
+  display: flex;
+  justify-content: center; /*space-around;*/
+}
+.button-up {
+  width: 200px;
+  height: 30px;
+  background-color: #D9D9D9;
+  margin: 0px 30px 0px 0px;
+  border: 2px solid black;
+}
+
+.pagina {
+  display: flex;
+  justify-content: center;
+}
+
+
+.container-down {
+  width: 80%;
+  margin: 0px auto;
+}
+.nav-content-down {
+  display: flex;
+  justify-content: center; /*space-around;*/
+}
+.button-down {
+  width: 250px;
+  height: 30px;
+  background-color: #D9D9D9;
+  margin: 0px 60px 0px 0px;
+}
+
+.product {
+  margin: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.divbutton-nazad {
+   margin: 10% 50px 10% 0;
+}
+
+.button-nazad {
+  width: 50px;
+  height: 50px;
+}
+
+.divbutton-vpered {
+   margin: 10% 0 10% 50px;
+}
+
+.button-vpered {
+  width: 50px;
+  height: 50px;
+}
+
+.item_product2 {
+padding: 10px 0;
+}
+
+.item_product {
+display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.item_product .image {
+  width:400px;
+  height:400px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 3px solid #ffffff;
+}
+
+.item_product .item-info {
+padding: 0 0;
+}
+
+.item-info p {
+  width:400px
+}

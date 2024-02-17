@@ -1,0 +1,66 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Товары
+{% endblock title %}
+
+{% block 5 %}class="buttonactive"{% endblock 5 %}
+{% block 6 %}<button >манагер</button>{% endblock 6 %}
+{% block container-edit %}
+        <div class="container-up">
+            <div class="nav-content-up">
+                <form action="{% url 'product_create' %}"><button {% block 18 %}class="button-up"{% endblock 18 %}>добавить</button></form>
+            </div>
+        </div>
+{% endblock container-edit %}
+{% block content %}
+   <!--<h1>Все товары</h1>-->
+   <!--<p><a href="/news/search/">поиск новостёв</a></p>-->
+   <!--<hr>-->
+
+   {% if products %}
+<div class="products">
+<div class="container">
+    <div class="products-content">
+           {% for product in products %}
+           <div class="item">
+               <div class="image" style="background-image: url(/media/{{ product.image }})"></div>
+
+               <div class="item-info">
+               <p class="title">{{ product.title }}</p>
+               <p class="price">{{ product.price }}</p>
+               <p class="price"><a href="{% url 'product_number' product.id %}">посмотреть товар</a></p>
+               <p class="price"><a href="{% url 'product_update' product.id %}">изменить</a></p>
+               <p class="price"><a href="{% url 'product_delete' product.id %}">удалить</a></p>
+               </div>
+
+           </div>
+           {% endfor %}
+    </div>
+</div>
+</div>
+   {% else %}
+       <h2>Товаров нет!</h2>
+   {% endif %}
+
+
+<p class="pagina">
+   {% if page_obj.has_previous %}
+       <a href="?page=1">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+   {{ page_obj.number }}
+   {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+</p>
+<!--<p><a href="/news/create/">добавить новость</a></p>-->
+
+{% endblock content %}

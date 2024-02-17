@@ -1,0 +1,38 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+зарегестрироваться
+{% endblock title %}
+{% block 9 %}<form action="{% url 'signup' %}"><button class="buttonactive">вход</button></form>{% endblock 9 %}
+{% block content %}
+
+{% block container-up %}
+{% endblock container-up %}
+
+{% block container-edit %}
+{% endblock container-edit %}
+
+<h2> Войти в систему </h2>
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="Войти">
+</form>
+<button> <a href="{% url 'signup' %}"> Регистрация </a></button>
+
+{% block container-down %}
+{% endblock container-down %}
+{% endblock %}
+
+
+

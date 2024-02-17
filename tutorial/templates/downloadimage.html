@@ -1,0 +1,36 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Товар
+{% endblock title %}
+
+{% block 6 %}<button class="buttonactive">манагер</button> {% endblock 6 %}
+
+{% block container-up %}
+{% endblock container-up %}
+{% block container-edit %}
+{% endblock container-edit %}
+{% block content %}
+
+<div class="products">
+<div class="container">
+    <div class="products-content">
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+   {{ form.as_p }}
+  <button type="submit">Загрузить</button>
+</form>
+
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
+
+{% block container-down %}
+{% endblock container-down %}
+    </div>
+</div>
+</div>
+
+{% endblock content %}
