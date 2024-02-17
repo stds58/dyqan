@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-02r6rtprh1giv3n294isu!r5_bm4k8!y3$8wr&ncot4inn@yr#'
+#SECRET_KEY = '{{secret_key}}'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,6 +92,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 WSGI_APPLICATION = 'lulet.wsgi.application'
+
 
 
 # Database
