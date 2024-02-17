@@ -49,12 +49,17 @@ class ProductUpdate(UpdateView):
 class ProductDelete(DeleteView):
     model = Product
     template_name = 'product_delete.html'
+    #success_url = '/'
     #success_url = reverse_lazy('back to calling url') #reverse_lazy('product')
 
 
     def get_success_url(self):
         print(f"HTTP_REFERER-{self.request.META.get('HTTP_REFERER')}")
-        return self.request.META.get('HTTP_REFERER')
+        #return self.request.META.get('HTTP_REFERER')
+        success_url = self.request.META.get('HTTP_REFERER')
+        return success_url
+    #https://django.fun/qa/425661/
+
 
 
 
